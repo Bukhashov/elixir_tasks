@@ -1,18 +1,17 @@
 defmodule Mapkeys do
-  @moduledoc """
-  Documentation for `Mapkeys`.
-  """
+  def sum_of_key(map, key) do
+    a = Map.get(map, key)
 
-  @doc """
-  Hello world.
+    # case map do
+    #   %{} -> sum_of_key(:non)
+    #   _   -> sum_of_key(:non)
 
-  ## Examples
+    a
 
-      iex> Mapkeys.hello()
-      :world
+    # end
+  end
 
-  """
-  def hello do
-    :world
+  def sum_of_key(:non) do
+    0
   end
 end
