@@ -1,17 +1,19 @@
 defmodule Mapkeys do
   def sum_of_key(map, key) do
-    a = Map.get(map, key)
+    fun = fn x, acc ->
+      if Map.has_key?(x, key) do acc+1
+      else acc end
+    end
 
-    # case map do
-    #   %{} -> sum_of_key(:non)
-    #   _   -> sum_of_key(:non)
+    res = case map do
+      %{}  ->  sum_of_key(:nun)
+      _ -> Enum.reduce(map, 0, fun)
+    end
 
-    a
-
-    # end
+    res
   end
 
-  def sum_of_key(:non) do
+  defp sum_of_key(:nun) do
     0
   end
 end
